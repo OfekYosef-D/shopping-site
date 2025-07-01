@@ -1,0 +1,125 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #ffffff;
+  color: #030303;
+  height: 80px;
+  flex-direction: column;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.navContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.navLinks {
+  display: flex;
+  gap: 20px;
+  font-size: 15px;
+  padding: 15px 110px; /* Reduced from 100px to move more left */
+  align-items: center;
+  transition: color 0.2s ease;
+  position: relative;
+}
+
+.rightIcons {
+  display: flex;
+  gap: 15px;
+  padding: 15px 110px;
+  align-items: center;
+}
+
+.navLink {
+  padding-left: 30px; /* Reduced from 50px */
+  padding-top: 7px;
+  position: relative; /* Add this for the ::after to work properly */
+  transition: color 0.2s ease; /* Move transition here */
+}
+
+.navLink:hover {
+  color: #6b6d70;
+}
+
+.navLink::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 30px; /* Match the padding-left */
+    width: 0; /* Start with 0 width */
+    height: 2px;
+    background-color: #6b6d70;
+    transition: width 0.2s ease; /* Animate width instead */
+}
+
+.navLink:hover::after {
+    width: calc(100% - 30px); /* Subtract the padding */
+}
+
+.centeredLine {
+  border-bottom: 2px solid #d3d3d3;
+  width: 87%;
+  margin: 10px auto 0;
+}
+
+/* Responsive styles for tablets (max-width: 768px) */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px;
+    height: auto; /* Allow navbar to adjust height */
+    min-height: 60px; /* Minimum height */
+  }
+
+  .navLinks {
+    padding: 10px 20px; /* Reduce padding significantly */
+    font-size: 14px;
+  }
+
+  .rightIcons {
+    padding: 10px 20px; /* Reduce padding significantly */
+    gap: 10px;
+  }
+
+  .navLink {
+    padding-left: 15px; /* Reduce padding */
+    padding-top: 5px;
+  }
+
+  .centeredLine {
+    width: 90%;
+  }
+}
+
+/* Responsive styles for phones (max-width: 480px) */
+@media (max-width: 480px) {
+  .navbar {
+    padding: 8px;
+    height: auto;
+    min-height: 50px;
+  }
+
+  .navLinks {
+    padding: 8px 15px; /* Further reduce padding */
+    font-size: 12px;
+    gap: 15px; /* Maintain horizontal layout but reduce gap */
+  }
+
+  .rightIcons {
+    padding: 8px 15px;
+    gap: 8px;
+  }
+
+  .navLink {
+    padding-left: 10px;
+    padding-top: 3px;
+  }
+
+  .centeredLine {
+    width: 95%;
+  }
+}
