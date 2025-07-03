@@ -49,7 +49,7 @@
 
 @font-face {
   font-family: 'PGF Now Light';
-  src: url('./assets/fonts/Poppins-Light.otf') format('opentype');
+  src: url('./assets/fonts/Poppins-Medium.otf') format('opentype');
   font-weight: 300; /* Add proper font weight */
   font-style: normal;
 }
@@ -58,7 +58,7 @@ body {
   font-family: 'PGF Now Bold', sans-serif;
   line-height: 1.6;
   color: var(--text-primary);
-  background-color: var(--bg-primary);
+  background-color: #ffffff;
 }
 
 button {

@@ -1,0 +1,75 @@
+.cardContainer {
+  display: flex; /* Change from grid to flex */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px; /* More rounded like your buttons */
+  background-color: #f9fafb; /* Softer background like your search input */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); /* Softer shadow */
+  border: 1px solid #e5e7eb; /* Subtle border like your inputs */
+  width: clamp(160px, 22vw, 180px); /* Slightly larger */
+  height: clamp(140px, 18vw, 170px); /* Better proportions */
+  padding: clamp(16px, 3vw, 20px); /* More consistent padding */
+  margin-bottom: 20px;
+  transition: all 0.2s ease; /* Smooth hover like your buttons */
+  cursor: pointer; /* Indicate it's interactive */
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cardContainer:hover {
+  transform: translateY(-4px) scale(1.02); /* Add subtle scale */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  border-color: #d1d5db; /* Slightly darker border */
+}
+
+.title {
+  font-size: clamp(14px, 2.5vw, 16px); /* Responsive like your other text */
+  font-weight: 600;
+  color: #374151; /* Darker, more readable color */
+  margin-top: 8px; /* Space above title */
+  text-align: center;
+  text-transform: capitalize; /* Capitalize category names */
+  line-height: 1.3;
+}
+
+.iconContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  background-color: #e5e7eb; /* Light background for icon */
+  border-radius: 16px;
+  margin-bottom: 12px;
+  color: #374151; /* Icon color */
+  transition: all 0.2s ease;
+}
+
+.iconContainer svg {
+    width: 36px; /* Slightly bigger icons */
+    height: 36px;
+}
+
+/* Add hover effect for icon container */
+.cardContainer:hover .iconContainer {
+    background-color: #d1d5db;
+    transform: scale(1.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .cardContainer {
+    width: clamp(140px, 45vw, 160px);
+    height: clamp(120px, 35vw, 140px);
+    padding: 12px;
+  }
+
+  .cardImage {
+    width: 60px;
+    height: 60px;
+  }
+
+  .title {
+    font-size: 14px;
+  }
+}

@@ -19,7 +19,7 @@ const Navbar = () => {
                     <Link to="/profile" className={styles.navLink}><CircleUserRound size={24} strokeWidth={2.5}/></Link>
                 </div>
             </div>
-            <div className={styles.centeredLine}></div>
+            {/* <div className={styles.centeredLine}></div> */}
         </div>
     )
 }

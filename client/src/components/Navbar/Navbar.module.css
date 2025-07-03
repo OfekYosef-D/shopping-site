@@ -7,9 +7,15 @@
   color: #030303;
   height: 80px;
   flex-direction: column;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: add shadow when scrolling */
   transition: all 0.3s ease;
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* Ensures navbar stays above other content */
+  border-bottom: 1px solid var(--border-color); 
 }
+
+
 
 .navContent {
   display: flex;
@@ -42,23 +48,27 @@
   transition: color 0.2s ease; /* Move transition here */
 }
 
+.navbar.scrolled {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
 .navLink:hover {
   color: #6b6d70;
 }
 
 .navLink::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 30px; /* Match the padding-left */
-    width: 0; /* Start with 0 width */
-    height: 2px;
-    background-color: #6b6d70;
-    transition: width 0.2s ease; /* Animate width instead */
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 30px; /* Match the padding-left */
+  width: 0; /* Start with 0 width */
+  height: 2px;
+  background-color: #6b6d70;
+  transition: width 0.2s ease; /* Animate width instead */
 }
 
 .navLink:hover::after {
-    width: calc(100% - 30px); /* Subtract the padding */
+  width: calc(100% - 30px); /* Subtract the padding */
 }
 
 .centeredLine {

@@ -1,0 +1,196 @@
+.cardContainer {
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.2s ease;
+    height: 100%; /* This ensures all cards stretch to same height */
+    cursor: pointer;
+}
+
+.cardContainer:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border-color: #d1d5db;
+}
+
+.imageContainer {
+    position: relative;
+    width: 100%;
+    height: 220px; /* Fixed height for consistency */
+    overflow: hidden;
+    background: #f9fafb;
+    border-bottom: 1px solid #f3f4f6;
+    flex-shrink: 0; /* Prevent image container from shrinking */
+}
+
+.productImage {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 16px;
+    transition: transform 0.3s ease;
+}
+
+.cardContainer:hover .productImage {
+    transform: scale(1.02);
+}
+
+.categoryBadge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: #1f2937;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.contentContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    flex: 1; /* This makes content area fill remaining space */
+    gap: 12px;
+}
+
+.title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin: 0;
+    line-height: 1.4;
+    height: 2.8rem; /* Fixed height prevents layout shifts */
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.description {
+    font-size: 0.875rem;
+    color: #6b6d70;
+    line-height: 1.5;
+    margin: 0;
+    flex: 1; /* Takes up available space */
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.ratingContainer {
+    display: flex;
+    align-items: center;
+    margin: 8px 0;
+}
+
+.stars {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.ratingText {
+    font-size: 0.875rem;
+    color: #6b7280;
+    font-weight: 500;
+}
+
+.priceContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto; /* Pushes to bottom */
+    padding-top: 16px;
+    border-top: 1px solid #f3f4f6;
+    gap: 12px;
+}
+
+.price {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1f2937;
+}
+
+.addToCartBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background: #000000;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 25px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.addToCartBtn:hover {
+    background: #333333;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.addToCartBtn:active {
+    transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .cardContainer {
+        border-radius: 8px;
+    }
+    
+    .contentContainer {
+        padding: 16px;
+        gap: 10px;
+    }
+    
+    .title {
+        font-size: 0.9rem;
+        min-height: 2.4rem;
+    }
+    
+    .description {
+        font-size: 0.8rem;
+        min-height: 3rem;
+    }
+    
+    .addToCartBtn {
+        padding: 8px 12px;
+        font-size: 0.8rem;
+    }
+    
+    .price {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .contentContainer {
+        padding: 12px;
+    }
+    
+    .priceContainer {
+        flex-direction: column;
+        gap: 10px;
+        align-items: stretch;
+    }
+    
+    .addToCartBtn {
+        width: 100%;
+        padding: 12px;
+    }
+}
