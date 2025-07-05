@@ -1,11 +1,25 @@
 import React from 'react'
 import styles from './ProductCard.module.css'
 import { Star, ShoppingCart } from 'lucide-react'
+import { useOutletContext } from 'react-router-dom'
 
-const ProductCard = ({ title, price, desc, category, image, rating }) => {
+const ProductCard = ({ id, title, price, desc, category, image, rating }) => {
+    const { addToCart } = useOutletContext()
+    
     // Truncate long titles and descriptions
     const truncateText = (text, maxLength) => {
         return text.length > maxLength ? text.substring(0, maxLength) + '...' : text
+    }
+
+    const handleAddToCart = () => {
+        console.log('Adding to cart:', { id, title, price, image, category })
+        addToCart({
+            id,
+            title,
+            price,
+            image,
+            category
+        })
     }
 
     return (
@@ -42,7 +56,11 @@ const ProductCard = ({ title, price, desc, category, image, rating }) => {
                 
                 <div className={styles.priceContainer}>
                     <span className={styles.price}>${price}</span>
-                    <button className={styles.addToCartBtn}>
+                    <button 
+                        className={styles.addToCartBtn}
+                        onClick={handleAddToCart}
+                        aria-label={`Add ${title} to cart`}
+                    >
                         <ShoppingCart size={16} />
                         Add to Cart
                     </button>
